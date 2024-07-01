@@ -1,4 +1,5 @@
 name: FastAPI CI/CD
+ # https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows
 
 on:
   # Trigger the workflow on push
@@ -29,7 +30,6 @@ jobs:
         run: pip3 install virtualenv poetry
 
       # Step-3 Setup Virtual ENV
-      # https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows
       - name: Virtual ENV
         uses: actions/cache@v2
         id: cache-venv # name for referring later
