@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from mangum import Mangum
 
 app = FastAPI(
     title="FastAPI",
@@ -7,7 +8,7 @@ app = FastAPI(
     contact={
         "name": "Hojiakbar",
         "email": "hojiakbarnasriddinov2006@gmail.com",
-        "tel": "+998993250628"  
+        "tel": "+998993250628"
     }
 )
 
@@ -15,3 +16,5 @@ app = FastAPI(
 @app.get('/')
 async def get():
     return {"message": "Hello World"}
+
+handler = Mangum(app=app)

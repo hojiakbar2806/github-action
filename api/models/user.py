@@ -3,7 +3,7 @@ from sqlalchemy import Boolean, Column, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils import UUIDType, EmailType
 from datetime import datetime
-from app.database import Base
+from api.database import Base
 
 
 class User(Base):
