@@ -14,4 +14,4 @@ app = FastAPI(
 
 @app.get('/')
 async def get():
-    return {"message": "/"}
+    return {"message": "Hello World"}
