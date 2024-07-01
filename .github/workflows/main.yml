@@ -27,7 +27,7 @@ jobs:
 
       # Step-2 Install Python Virtual ENV
       - name: Install Python Virtual ENV
-        run: pip3 install virtualenv
+        run: pip3 install virtualenv poetry
 
       # Step-3 Setup Virtual ENV
       # https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows
@@ -43,7 +43,7 @@ jobs:
 
       # Step-4 Build a Virtual ENV, but only if it doesn't already exist
       - name: Activate Virtual ENV
-        run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
+        run: virtualenv venv && source venv/bin/activate && poetry install
         if: steps.cache-venv.outputs.cache-hit != 'true'
 
       - name: Run Tests   
